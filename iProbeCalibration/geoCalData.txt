@@ -1,0 +1,137 @@
+        result_iprobe = minimize(fun=opt_iprobe, 
+                                 x0=iprobe_prm_input, 
+                                 args=(solidCube_prm_input, 'scalar'), 
+                                 method='L-BFGS-B', 
+                                 bounds=[(53.5, 73.5), 
+                                         (67.0, 87.0), 
+                                         (-87.0, -67.0)], 
+                                 tol=tol,
+                                 options={'maxiter': max_iter, 'disp': False})
+        iprobe_prm_input = result_iprobe.x
+
+        result_solidCube = least_squares(fun=opt_solidcube, 
+                                         x0=solidCube_prm_input, 
+                                         args=(iprobe_prm_input, 'vector'), 
+                                         ftol=tol, 
+                                         # tr_options={'verbosity': 1, 'max_iter': 2000}, 
+                                         verbose=1, 
+                                         max_nfev=max_iter)
+        solidCube_prm_input = result_solidCube.x
+
+1.geoCal2
+
+Final optimized parameters:
+iProbe Parameters: [ 66.93134649  74.17418249 -77.03010405]
+SolidCube Parameters: [ 9.04244247e-02  1.04356156e+00 -3.25926171e-02  5.56077254e+00
+  3.60858917e-02  9.99922056e-05]
+Final Error: 1.9764003196059035
+[0.66498904 0.34012346 1.19101047]
+
+Final optimized parameters:
+iProbe Parameters: [ 66.92666341  74.16819095 -77.03986809]
+SolidCube Parameters: [ 9.10012788e-02  1.04976353e+00 -3.27418848e-02  5.56134854e+00
+  3.31431987e-02  1.92994944e-04]
+Final Error: 1.9727903999679168
+
+2.geoCal1
+
+iProbe Parameters: [66.09355661, 74.33674123, -77.60860147]
+SolidCube Parameters: [-2.22466626e-03, 6.39618190e-02, -5.08201694e-04, 
+                       5.46820210e+00, 7.12379253e-04, 1.75473031e-03]
+Final Error: 0.4057314386596837
+
+7 pos:
+iProbe Parameters: [ 66.65082051  73.70202877 -77.7601363 ]
+SolidCube Parameters: [ 1.87594820e-02  2.36826481e-01 -4.50203384e-03  5.48917017e+00
+  3.64678838e-02  1.75494938e-03]
+Final Error: 0.4189002456746259
+
+3.geoCal3
+
+Final optimized parameters:
+iProbe Parameters: [66.20844612, 74.07940723, -77.77190349]
+SolidCube Parameters: [5.75713355e-03, 1.65454347e-01, -2.51927934e-03, 
+                       5.47618023e+00, 6.33467621e-02, -4.00017302e-04]
+Final Error: 0.747181025766401
+
+Final optimized parameters:
+iProbe Parameters: [66.20848813776877, 74.07944720546551, -77.77180668329676]
+SolidCube Parameters: [0.006088377324876562, 0.16975562983065898, -0.002661611514096111, 
+                       5.4765105771127836, 0.06394317137365886, -0.0004192672503799672]
+Final Error: 0.74571408961852
+[0.36082829 0.70891104 0.33827372]
+
+
+Robot1:
+
+Final optimized parameters:
+iProbe Parameters: [65.39392092546034, 74.27754179794745, -78.90018349612558]
+SolidCube Parameters: [0.026621052826668653, 0.28142488671966015, -0.003442528937855944, 
+                       5.497038874449061, 0.004936267489441483, -0.0005406968424569496]
+Final Error: 7.299291574529328
+[1.47036329 4.15046523 1.31784374]
+
+Final optimized parameters:
+iProbe Parameters: [65.18552737272259, 74.07103953826855, -78.50117994836484]
+SolidCube Parameters: [6.06763573702, -0.6823459461838326, 0.01618008419478334, 
+                       11.546269614640202, -0.07551797558447025, 0.0006333263247050757]
+Final Error: 2.545103244920781
+[0.39364344 1.57425892 0.3970175  0.36421803 1.44195777 0.28143749 0.30035282 1.10485839 0.29095257]
+
+Robot2:
+
+Final optimized parameters:
+iProbe Parameters: [65.09435929303649, 74.20233322262244, -78.42560752762888]
+SolidCube Parameters: [0.4785964150348852, 0.3046415434970332, -0.003916539620741264, 
+                       5.949882180933179, -0.1232472204813352, 0.0029416898060632144]
+Final Error: 2.792213600873056
+
+Frame cal:
+Final optimized parameters:
+iProbe Parameters: [64.9431856199451, 74.32932306572513, -78.43056148009276]
+Final Error: 0.45288199005698493
+
+SMR cal:
+Final optimized parameters:
+SolidCube Parameters: [0.029417742666944358, 0.34613846383907, -0.006364240015416021, 
+                       5.499849803901652, -0.003316485775130038, 0.0007725976362039901]
+Final Error: 0.26944062235242866
+
+
+
+Robot3:
+
+Final optimized parameters:
+iProbe Parameters: [64.5011708628196, 75.26929508546563, -77.89281550217865]
+SolidCube Parameters: [2.7855151612228064, -0.07886438612558434, 0.0028889278738881566, 
+                       8.261248615052335, -0.07499427477443624, 0.0017110750522519528]
+Final Error: 1.6111992777845625
+
+
+SMR cal:
+Final optimized parameters:
+SolidCube Parameters: [0.02938707937765631, 0.37415545856852334, -0.007216594687467497, 
+                       5.499818818409724, -0.0069071979096573775, 0.0008926791868134888]
+Final Error: 0.1473537698758959
+
+Final optimized parameters:
+SolidCube Parameters: [0.036237121115058175, 0.3990319807616971, -0.00807028859567638, 
+                       5.5066640354616645, -0.009644563529585903, 0.0009676617839816809]
+Final Error: 0.14499129474888975
+
+Final optimized parameters:
+SolidCube Parameters: [0.03399944385623841, 0.3906381271096312, -0.007798730079162356, 
+                       5.504853410217059, -0.009268601010029149, 0.0009609381535233711]
+Final Error: 0.1427713842203843
+
+
+Frame cal:
+Final optimized parameters:
+iProbe Parameters: [64.14325663027542, 75.53741941845027, -77.94238277637696]
+Final Error: 0.24072546307312057
+
+
+Undistorted:
+Final optimized parameters:
+iProbe Parameters: [64.16833680294536, 75.53259048641841, -77.92479728461925]
+Final Error: 0.24547986795033663
